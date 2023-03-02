@@ -1,0 +1,7 @@
+name: Custom Webform Handler
+type: module
+description: A module containing a custom webform handler
+core_version_requirement: ^8 || ^9 ||^10
+package: Custom
+dependencies:
+  - 'webform:webform'

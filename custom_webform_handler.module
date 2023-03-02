@@ -1,0 +1,44 @@
+<?php
+
+
+/**
+ * Implements hook_mail for module_name.
+ */
+
+ function custom_webform_handler_mail($key, &$message, $params) {
+
+  if (is_array($params) && isset($params['subject']) && isset($params['body'])) {
+
+    switch ($key) {
+
+      case 'all':
+        $message['subject'] = $params['subject'];
+        $message['body'][] = $params['body'];
+        break;
+
+      }
+
+    } else {
+
+      // Handle the error.
+
+      error_log('Invalid $params array in custom_webform_handler_mail()');
+
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+
+ function custom_webform_handler_theme() {
+
+  return [
+
+    'webform_handlerls_summary' => [
+      'variables' => ['settings' => NULL, 'handler' => []],
+    ],
+
+  ];
+
+}

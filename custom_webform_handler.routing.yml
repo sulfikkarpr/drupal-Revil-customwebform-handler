@@ -1,0 +1,9 @@
+custom_webform_handler.handle_click:
+  path: '/webform-click/{sid}'
+  defaults:
+    _title: 'Handle webform click'
+    _controller: '\Drupal\custom_webform_handler\Controller\CustomWebformHandlerController::handleClick'
+  requirements:
+    _permission: 'access content'
+    sid: \d+
+
